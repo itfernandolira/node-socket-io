@@ -10,12 +10,20 @@
     <h1>Teste</h1>
     <input type="text" name="" id="nome">
     <button onclick="enviar()">Enviar</button>
+    <hr>
+    <p id="resultado"></p>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
 <script>
     var socket=io("http://localhost:3000");
     //enviar mensagem - nome do evento e dados
     socket.emit("bemvindo",{ nome: "Fernando Lira"})
+
+    socket.on("resultado", (data) => {
+        //console.log(data);
+        var p=document.getElementById("resultado");
+        p.innerHTML=data;
+    });
 
     function enviar() {
         var input=document.getElementById("nome");

@@ -19,6 +19,7 @@ io.on("connection",(socket) => {
 
     socket.on("nome",(data) => {
         console.log(data);
+        socket.emit("resultado",data + " - Fullstack web developer - FLAG");
     });
 
 });
