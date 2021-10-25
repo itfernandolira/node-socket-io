@@ -17,14 +17,7 @@ io.on("connection",(socket) => {
         console.log(socket.id + " disconnected");
     });
 
-    socket.on("bemvindo",(data) => {
-        console.log(data);
-    });
 
-    socket.on("nome",(data) => {
-        console.log(data);
-        socket.emit("resultado",data + " - Fullstack web developer - FLAG");
-    });
 
 });
 

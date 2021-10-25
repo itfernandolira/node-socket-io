@@ -7,32 +7,22 @@
     <title>Socket.io</title>
 </head>
 <body>
-    <h1>Teste</h1>
-    <input type="text" name="" id="nome" oninput="enviar()">
-    <button onclick="">Enviar</button>
-    <hr>
-    <p id="resultado"></p>
+    <h1>Chat</h1>
+    <div id="chat">
+
+    </div>
+    <input type="text" name="" id="msg"><br>
+    <input type="text" name="" id="username" placeholder="Username...">
+    <button>Enviar mensagem</button>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
 <script>
     var socket=io("http://localhost:3000");
-    //enviar mensagem - nome do evento e dados
-    socket.emit("bemvindo",{ nome: "Fernando Lira"})
 
     socket.on("disconnect",() =>{
         console.log("Disconnected");
     });
 
-    socket.on("resultado", (data) => {
-        //console.log(data);
-        var p=document.getElementById("resultado");
-        p.innerHTML=data;
-    });
 
-    function enviar() {
-        var input=document.getElementById("nome");
-        //console.log(input.value);
-        socket.emit("nome",input.value);
-    }
 </script>
 </html>
