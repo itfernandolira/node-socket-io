@@ -19,6 +19,10 @@
     //enviar mensagem - nome do evento e dados
     socket.emit("bemvindo",{ nome: "Fernando Lira"})
 
+    socket.on("disconnect",() =>{
+        console.log("Disconnected");
+    });
+
     socket.on("resultado", (data) => {
         //console.log(data);
         var p=document.getElementById("resultado");
