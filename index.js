@@ -10,8 +10,13 @@ app.set("view engine", "ejs");
 //Criar o evento Connection
 //socket é o cliente - uma instância por cada cliente
 io.on("connection",(socket) => {
-    console.log(socket);
-    console.log(socket.id);
+    //console.log(socket);
+    //console.log(socket.id);
+
+    socket.on("bemvindo",(data) => {
+        console.log(data);
+    });
+
 });
 
 app.get("/",(req,res) => {
