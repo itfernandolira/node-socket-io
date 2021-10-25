@@ -17,7 +17,9 @@ io.on("connection",(socket) => {
         console.log(socket.id + " disconnected");
     });
 
-
+    socket.on("msg", (data) => {
+        
+    })
 
 });
 
