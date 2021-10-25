@@ -23,6 +23,13 @@
         console.log("Disconnected");
     });
 
+    socket.on("showmsg",(data) => {
+        var chat=document.getElementById("chat");
+        var p=document.createElement("p");
+        p.innerHTML= "- " + data.msg + " - " + data.username;
+        chat.append(p);
+    })
+
     function send() {
         var msg=document.getElementById("msg").value;
         var username=document.getElementById("username").value;
