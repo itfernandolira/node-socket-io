@@ -8,11 +8,19 @@
 </head>
 <body>
     <h1>Teste</h1>
+    <input type="text" name="" id="nome">
+    <button onclick="enviar()">Enviar</button>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
 <script>
     var socket=io("http://localhost:3000");
     //enviar mensagem - nome do evento e dados
     socket.emit("bemvindo",{ nome: "Fernando Lira"})
+
+    function enviar() {
+        var input=document.getElementById("nome");
+        //console.log(input.value);
+        socket.emit("nome",input.value);
+    }
 </script>
 </html>

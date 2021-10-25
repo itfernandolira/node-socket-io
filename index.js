@@ -17,6 +17,10 @@ io.on("connection",(socket) => {
         console.log(data);
     });
 
+    socket.on("nome",(data) => {
+        console.log(data);
+    });
+
 });
 
 app.get("/",(req,res) => {
